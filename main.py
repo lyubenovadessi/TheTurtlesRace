@@ -15,7 +15,7 @@ def start_race():
         new_turtle.goto(x=-380, y=y_positions[turtle_index])
         all_turtles.append(new_turtle)
 
-    user_bet = screen.textinput(title="Make your bet", prompt=f"Choose a color: {', '.join(colors)} ")
+    user_bet = screen.textinput(title="Make your bet💰", prompt=f"Choose a color: {', '.join(colors)} ")
     is_race_on = bool(user_bet)
 
     while is_race_on:
@@ -24,14 +24,15 @@ def start_race():
                 is_race_on = False
                 winning_turtle = turtle.pencolor()
                 if winning_turtle == user_bet:
-                    screen.textinput("🏁 Result", f"🏆You've won! The winning turtle is {winning_turtle}.")
+                    screen.title(f"🏁 Result: 🏆You've won! The winning turtle is {winning_turtle}🐢🐢🐢.")
                 else:
-                    screen.textinput("🏁 Result", f"😕You've lost! The winning turtle is {winning_turtle}.")
+                    screen.title(f"🏁 Result: 😕You've lost! The winning turtle is {winning_turtle}🐢🐢🐢.")
             random_distance = random.randint(0, 10)
             turtle.forward(random_distance)
 
 screen = Screen()
 screen.setup(width=800, height=500)
+screen.title("🏁🐢Turtle Race")
 
 while True:
     start_race()
